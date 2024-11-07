@@ -1,0 +1,98 @@
+import java.util.Random;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{	
+	    Scanner sc=new Scanner(System.in);
+	    Random r=new Random();
+	    
+	    System.out.print("Enter  Team1 name: ");
+	    String t1=sc.nextLine();
+	    System.out.print("Enter  Team2 name: ");
+	    String t2=sc.nextLine();
+	    
+	    int ans1=r.nextInt(300)+1;
+	    int ans2=r.nextInt(300)+1;
+	    
+	    String[] hint1=new String[3];
+	    String[] hint2=new String[3];
+	    
+	    hint1[0]=ans1>150?"It is greater than 150":"It is lesser than 150";
+	    hint1[1]=ans1%2==0?"It is a even number":"It is a odd number";
+	    hint1[2]=ans1%5==0?"It is divisible by 5":"It is not divisible by 5";
+	    System.out.println(t1+" turn :-");
+	    int c1=0;
+	    String ch;
+	    for(int i=0;i<3;i++)
+	    {
+	        System.out.print("Do you want a hint ? y/n : ");
+	        ch=sc.nextLine();
+	        if(ch.equalsIgnoreCase("y"))
+	        {
+	            System.out.println("Hint no: "+(i+1)+"----->"+hint1[i]);
+	            c1++;
+	        }
+	        else{
+	            break;
+	        }
+	        
+	    }
+	    System.out.print("Predict the answer: ");
+	    int guess1=sc.nextInt();
+	    sc.nextLine(); 
+	    
+	    int s1=300-(c1*25);
+	    s1=s1-Math.abs(ans1-guess1);
+	    
+	    System.out.println("------------------------------------");
+	     System.out.println(t2+" turn :-");
+	    hint2[0]=ans2>150?"It is greater than 150":"It is lesser than 150";
+	    hint2[1]=ans2%2==0?"It is a even number":"It is a odd number";
+	    hint2[2]=ans2%5==0?"It is divisible by 5":"It is not divisible by 5";
+	    
+	    int c2=0;
+	    String ch1;
+	    for(int i=0;i<3;i++)
+	    {
+	        System.out.print("Do you want a hint ? y/n : ");
+	        ch1=sc.nextLine();
+	        if(ch1.equalsIgnoreCase("y"))
+	        {
+	            System.out.println("Hint no: "+(i+1)+"----->"+hint2[i]);
+	            c2++;
+	        }
+	        else{
+	            break;
+	        }
+	        
+	    }
+	    System.out.print("Predict the answer: ");
+	    int guess2=sc.nextInt();
+	    
+	    int s2=300-(c2*25);
+	    s2=s2-Math.abs(ans2-guess2);
+	    System.out.println("----------------------------------------");
+	    System.out.println("Score Board :-");
+	    System.out.println();
+	    System.out.println("The answer of team1 is: "+ans1);
+	    System.out.println("The predicted value of team1 is: "+guess1);
+	    System.out.println("The final answer of team1 is: "+s1);
+	    System.out.println();
+	    System.out.println("The answer of team2 is: "+ans2);
+	    System.out.println("The predicted value of team2 is: "+guess2);
+	    System.out.println("The final answer of team2 is: "+s2);
+	    System.out.println();
+	    System.out.println("Final result :-");
+	    if(s1>s2){
+	        System.out.println("Winner is "+t1);
+	    }
+	    else{
+	        System.out.println("Winner is "+t2);   
+	    }
+	    
+	    
+	    
+	    
+	}
+}
