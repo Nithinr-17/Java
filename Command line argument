@@ -1,0 +1,16 @@
+public class Main
+{
+	public static void main(String[] args) {
+		if(args.length==0)
+		{
+		    System.out.println("No arguments provided");
+		}
+		else{
+		  // char[] ch= args[0].toCharArray();
+		   for(int i=0;i<args[0].length();i++)
+		   {
+		       System.out.println(args[0]);
+		   }
+		}
+	}
+}
