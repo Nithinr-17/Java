@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main
+{
+    public static int sumofdigit(int a){
+        int d;
+        int res=0;
+       while(a!=0){
+         d=a%10;
+        res=res+d*d;
+        a=a/10;
+       }
+       return res;
+        
+    }
+    public static boolean calc(int n)
+    {
+        Set<Integer>visited=new HashSet<>();
+        while(n!=1 && !visited.contains(n))
+        {
+            visited.add(n);
+            n=sumofdigit(n);
+            
+            
+        }
+        return n==1;
+    }
+	public static void main(String[] args) 
+	{
+	    int num=68;
+	    System.out.println("It is round or not:"+calc(num));
+	}
+}
