@@ -1,0 +1,14 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("enter the Number: ");
+		int n=sc.nextInt();
+		int ans=0;
+		ans=n/5;
+		System.out.print(ans);
+		
+	}
+}
